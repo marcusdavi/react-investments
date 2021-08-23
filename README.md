@@ -16,7 +16,7 @@ O objetivo do app é mostrar como funciona a componentização com o React.
 
 ## Como rodar
 * Fazer um clone deste repositório
-* entrar na pasta do app
+* Entrar na pasta do app
 * Baixar as dependências - rodar o comando ``` yarn ```
 * Inicializar o app - rodar o comando ``` yarn dev ```
 * Acessar http://localhost:3000
