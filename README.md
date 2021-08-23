@@ -7,6 +7,8 @@ Aplicativo com consulta aos dados de um arquivo json de investimento durante um 
 
 O aplicativo exibe a evolução de 7 tipos de investimento durante um ano.
 
+O objetivo do app é mostrar como funciona a componentização com o React.
+
 ## Tecnologias utilizadas:
 * ReactJs
 * HTML
