@@ -15,8 +15,8 @@ O aplicativo exibe a evolução de 7 tipos de investimento durante um ano.
 ## Como rodar
 * Fazer um clone deste repositório
 * entrar na pasta do app
-* rodar o comando
-``` yarn dev ```
+* Baixar as dependências - rodar o comando ``` yarn ```
+* Inicializar o app - rodar o comando ``` yarn dev ```
 * Acessar http://localhost:3000
 
 ## Imagem do App
