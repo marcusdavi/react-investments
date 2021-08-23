@@ -21,6 +21,5 @@ O aplicativo exibe a evolução de 7 tipos de investimento durante um ano.
 
 ## Imagem do App
 <p align="center">
-  <strong> Page Home </strong>
   <img src="/src/img/print-home.png">
 </p>
