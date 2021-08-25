@@ -1,7 +1,8 @@
 import {formatNumber, formatPercent, formatNumberPercent} from '../helpers/NumberFormat'
+import {formatMonth} from '../helpers/DateFormat'
 
 export default function Investment({ children: investment}) {
-  const tdClassName = "border border-blue-600 text-center";
+  const tdClassName = "border border-blue-600 text-left";
   const totalIncome = investment.totalIncome;
   const totalPercentIncome =  investment.totalPercent;
   const reports = investment.reports;
@@ -43,7 +44,7 @@ export default function Investment({ children: investment}) {
               return (
                 <tr key={r.id}>
                   <td className={tdClassName}>
-                    {(r.month + "/" + r.year).padStart(7, "0")}
+                    {(formatMonth(r.month) + "/" + r.year)}
                   </td>
                   <td className={tdClassNameNumber}>{formatNumber(r.value)}</td>
                   <td className={tdClassNameNumber}>
