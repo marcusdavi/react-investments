@@ -7,6 +7,8 @@ Aplicativo com consulta aos dados de um arquivo json de investimento durante um 
 
 O aplicativo exibe a evolução de 7 tipos de investimento durante um ano.
 
+O objetivo do app é mostrar como funciona a componentização com o React.
+
 ## Tecnologias utilizadas:
 * ReactJs
 * HTML
@@ -14,13 +16,12 @@ O aplicativo exibe a evolução de 7 tipos de investimento durante um ano.
 
 ## Como rodar
 * Fazer um clone deste repositório
-* entrar na pasta do app
+* Entrar na pasta do app
 * Baixar as dependências - rodar o comando ``` yarn ```
 * Inicializar o app - rodar o comando ``` yarn dev ```
 * Acessar http://localhost:3000
 
 ## Imagem do App
 <p align="center">
-  <strong> Page Home </strong>
   <img src="/src/img/print-home.png">
 </p>
