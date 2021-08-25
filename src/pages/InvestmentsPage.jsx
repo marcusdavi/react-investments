@@ -3,20 +3,29 @@ import Investment from "../components/Investment";
 import Header from "../components/Header";
 import Main from "../components/Main";
 
-import { data } from "../data/investments";
+import { investments } from "../data/investments";
+import { useState,useEffect } from "react";
 
 export default function InvestmentsPage() {
-  const { investments, reports } = data;
+
+  const [allInvestiments, setAllInvestiments] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAllInvestiments(investments);  
+    }, 500);
+    
+  }, [])
+
   return (
     <div>
       <Header>React-Investments v.1.0.1</Header>
       <Main>
         <Investments>
-          {investments.map((i) => {
-            const reportInvest = reports.filter((r) => i.id === r.investmentId);
+          {allInvestiments.map((investment) => {
             return (
-              <Investment key={i.id} investHeader={i.description}>
-                {reportInvest}
+              <Investment key={investment.id}>
+                {investment}
               </Investment>
             );
           })}

@@ -1,5 +1,4 @@
-export const data = {
-  investments: [
+  const typeinvestments = [
     {
       id: "3176856a-82cf-4ce9-8803-c65107c7ad5e",
       description: "Fundo de Ações",
@@ -28,8 +27,9 @@ export const data = {
       id: "b21cbd7d-f4ae-4ff1-b015-c76b9c264a1a",
       description: "Fundo Temático",
     },
-  ],
-  reports: [
+  ];
+
+  const allReports = [
     {
       id: "014c4220-df90-4a43-b809-657941b53770",
       investmentId: "b21cbd7d-f4ae-4ff1-b015-c76b9c264a1a",
@@ -618,5 +618,33 @@ export const data = {
       year: 2020,
       value: 1151.1122688,
     },
-  ],
-};
+  ];
+
+  export const investments = buildInvestimentsReport()
+
+  function buildInvestimentsReport(){
+    const data = typeinvestments.map(i => {
+      const reportsByInvest = allReports.filter(r => i.id === r.investmentId);
+      const reports = reportAscWithIncome(reportsByInvest);
+      const initialValue = reports[0].value;
+      const finalValue = reports[reports.length-1].value;
+      const totalIncome = finalValue - initialValue
+      const totalPercent = 100*((finalValue/initialValue)-1);
+      return {...i, initialValue, finalValue, totalIncome, totalPercent, reports};
+    })
+    return data;
+  }
+
+  function reportAscWithIncome(reportsByInvest) {
+    const reportsAsc = reportsByInvest.sort((a, b) => a.month - b.month);
+    const reportsAscIncome = [{ ...reportsAsc[0], income: 0 }];
+    for (let index = 1; index < reportsAsc.length; index++) {
+      const current = reportsAsc[index];
+      const previous = reportsAsc[index - 1];
+      const incomeValue = 100 * (current.value / previous.value - 1);
+      reportsAscIncome.push({ ...current, income: incomeValue });
+    }
+    return reportsAscIncome;
+  }
+
+
