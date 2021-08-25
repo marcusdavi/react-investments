@@ -13,7 +13,7 @@ export default function Investment({ children: investment}) {
       ? "text-black"
       : "text-red-500";
   return (
-    <div className="border border-blue-400 p-1 m-2 w-96">
+    <div className="border border-blue-400 p-1 m-2 w-96 rounded-lg">
       <header>
         <p className="font-bold text-center text-lg bg-blue-300">
           {investment.description}

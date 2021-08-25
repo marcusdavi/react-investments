@@ -630,7 +630,7 @@
       const finalValue = reports[reports.length-1].value;
       const totalIncome = finalValue - initialValue
       const totalPercent = 100*((finalValue/initialValue)-1);
-      return {...i, initialValue, finalValue, totalIncome, totalPercent, reports};
+      return {...i, totalIncome, totalPercent, reports};
     })
     return data;
   }
